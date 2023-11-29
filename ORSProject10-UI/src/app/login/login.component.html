@@ -1,0 +1,147 @@
+<app-navbar #one></app-navbar>
+<style>
+  #nnn{
+    background: none;
+    border: none;
+  }
+  
+  </style>
+  
+  
+<style type="text/css">
+  .log1 {
+    padding-top: 13%; 
+  }
+  
+  .input-group-addon {
+    box-shadow: 9px 8px 7px #001a33;
+    
+  }
+  .grad{
+  background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));
+  background-repeat: no repeat;
+  background-size: 100%;
+  padding-bottom: 10px;
+    
+  }
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(35, 32, 32, 0.2);
+    transition: 0.5s;
+
+  }
+
+  .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+  #btn1{
+    border-radius: 45px;
+    
+  }
+#mn{
+  border-bottom-right-radius: 45px;
+  border-top-right-radius: 45px;
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+
+}
+
+#c1{
+  background: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237), rgba(255, 255, 255, 0.686));
+}
+  
+  </style>
+
+<div  class="row " id="c1" style="padding-top: 5%; padding-bottom: 6%;
+ /* background-image: url(../../assets/files/bluebg.jpg); */
+ background-size: cover; 
+background-repeat: no-repeat;" >
+  <div class="col-md-4">
+  </div>
+ 
+  <div class="col-md-4" style="padding: 0%;">
+    <div class="card input-group-addon grad" id="mn">
+      <div class="card-body">
+        <form>
+          <br>
+          <br>
+          <div style="text-align: center;">
+            <h1 style="color: rgb(4, 20, 31);"  class="font-weight-bold">{{'Login' | translate}}</h1>
+          </div>
+          <input type="hidden" name="log
+          inUrl" [(ngModel)]="form.loginUrl" class="form-control">
+          <div *ngIf="form.error && form.message == 'Invalid ID or Password'"
+            class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{'Invalid ID or Password' | translate}}
+          </div>
+          <div *ngIf="form.error==false && form.message == 'Logout Successfully'"
+            class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{'Log out successfully' | translate}}
+          </div>
+
+          <div *ngIf="form.error && form.message == 'Your Session has been Expired! Please Re-Login'"
+            class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{'Session Expired, Please Login Again' | translate}}
+          </div>
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Email Id' | translate}}</b>
+              <span class="required-field"></span></span>
+
+            <div class="col-sm-12" style="padding-top: 2%;">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-envelope grey-text"></i> </div>
+                </div>
+                
+                <input type="text" name="loginId" [(ngModel)]="form.loginId" class="form-control"
+                  placeholder="{{'Enter Login Id' | translate}}">
+              </div>
+            </div>
+           <span  *ngIf="inputerror.loginId != null"
+          class="alertRedColor" style=" color: red;" > {{'loginId'| translate}} </span> 
+          </div>
+           <!-- <span class="alertRedColor">{{inputerror.loginId}}</span>  -->
+          <div style="padding-top:3%">
+            <span><b>{{'Password' | translate}}</b>
+              <span class="required-field"></span></span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+                <a id="btn2" [routerLink]="['/forgotpassword']">{{'Forgot Password?' | translate}}</a>
+            
+            <div class="col-sm-12" style="padding-top: 10px;">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-key grey-text "></i> </div>
+                </div>
+                <input type="password" name="pwd" [(ngModel)]="form.password " class="form-control" id="pi1" 
+                  placeholder="{{'Enter Password' | translate}}">
+
+                
+              </div>
+            </div>
+            <span  *ngIf="inputerror.password != null"
+            class="alertRedColor" style=" color: red;" > {{'password'| translate}} </span> 
+
+            <!-- <span class="alertRedColor">{{inputerror.password}}</span> -->
+          </div>
+          <div class="row pt-3 pl-4 pb-5">
+            <div class="col-lg-2"></div>
+            <div class="pt-2">
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button (click)="signIn()" class="btn btn-primary" id="btn1">
+                {{'Sign in' | translate}}</button>
+              
+            </div>
+            &nbsp;&nbsp;&nbsp;
+          
+          </div>
+        </form>
+      </div>
+    </div>
+                                          
+  </div>
+</div>
+<app-footer></app-footer>
