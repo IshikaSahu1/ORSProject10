@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"com.rays.service","c":"CourseServiceInt","l":"findByName(String, UserContext)","u":"findByName(java.lang.String,com.rays.common.UserContext)"}];updateSearchResults();
